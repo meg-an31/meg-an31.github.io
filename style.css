@@ -9,7 +9,7 @@
 
             :root {
                 --header-image: url('purplecity.png');
-                /*--body-bg-image: url('926glitter.gif') ;
+                --body-bg-image: url('926glitter.gif') ;
 
                 /* colors */
                 --content: #43256E;
@@ -122,7 +122,7 @@
                 /* you can delete the line below if you'd prefer to not use an image */
                 background-size: 65px;
                 
-                /*background-image: var(--body-bg-image);
+                background-image: var(--body-bg-image);
             }
 
             * {
