@@ -8,7 +8,7 @@ function load_data() {
 
             // Create HTML elements to display the JSON data
             const articleElem = document.createElement("p");
-            articleElem.textContent = data.article;
+            articleElem.innerHTML = data.article;
 
             const titleElem = document.createElement("h2");
             titleElem.textContent = data.title;
