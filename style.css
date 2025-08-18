@@ -1,0 +1,237 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  color: white;
+  background-color: rgb(42, 40, 55);
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+}
+
+.ascii-art {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgb(200, 200, 200);
+  white-space: pre;
+}
+
+/* Main layout with three columns */
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%
+}
+
+/* Side rectangles for ASCII art */
+.side-rectangle {
+  width: 20%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 10px;
+  flex-shrink: 0;
+}
+
+.side-ascii {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.1;
+  color: rgb(180, 180, 180);
+  white-space: pre;
+  text-align: center;
+}
+
+/* Center content area */
+.content {
+  width: 60%;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: rgb(220, 220, 220);
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: rgb(205, 194, 219);
+  text-align: center;
+}
+
+.content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: rgb(154, 143, 191);
+  text-align: left;
+}
+
+.content h4 {
+  font-size: 0.9rem;
+  color: rgb(124, 122, 129);
+  text-align: left;
+  margin-bottom: 1rem;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgb(169, 169, 169);
+  text-align: left;
+  margin: 0;
+}
+
+/* Hover tooltip styles */
+.hover-link {
+  position: relative;
+  color: rgb(158, 149, 252);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hover-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(30, 30, 40);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  border: 1px solid rgb(70, 70, 80);
+}
+
+.hover-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.writing-link {
+  display: inline-block;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  padding: 1px 8px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  width: 100%; 
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+
+.writing-link:hover {
+  border-color: rgb(83, 73, 104);
+}
+
+/* Mobile-friendly styles */
+@media (max-width: 1200px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Create a container for the side rectangles when stacked */
+  .side-rectangle {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    padding: 10px;
+  }
+  
+  /* When stacked, arrange left and right side rectangles side by side */
+  .left-side {
+    order: 2;
+  }
+  
+  .right-side {
+    order: 3;
+  }
+  
+  .content {
+    order: 1;
+  }
+  
+  .side-ascii {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide tooltips on mobile devices */
+  .hover-link::after {
+    display: none;
+  }
+  
+  /* Make links more obvious on mobile */
+  .hover-link {
+    color: rgb(120, 170, 255);
+    text-decoration: underline;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(100, 150, 255, 0.1);
+  }
+  
+  /* Adjust ASCII art size for mobile */
+  .ascii-art {
+    font-size: 8px;
+    overflow-x: auto;
+  }
+  
+  /* Adjust content sizing for mobile */
+  .content {
+    max-width: 90%;
+    padding: 0 15px;
+  }
+  
+  .content h1 {
+    font-size: 2rem;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+  }
+  
+  .content p {
+    font-size: 1rem;
+  }
+  
+  .side-rectangle {
+    max-width: 300px;
+  }
+  
+  .side-ascii {
+    font-size: 6px;
+  }
+}
+
+/* Hide tooltips on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .hover-link::after {
+    display: none;
+  }
+}
+
