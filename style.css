@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
 }
 
 .ascii-art {
@@ -26,7 +26,7 @@ header {
   justify-content: center;
   align-items: flex-start;
   gap: 25px;
-  margin-top: 40px;
+  margin-top: 0px;
   padding: 0 20px;
   max-width: 1400px;
   margin-left: auto;
@@ -60,6 +60,9 @@ header {
   width: 60%;
   text-align: left;
   flex-shrink: 0;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .content h1 {
@@ -98,6 +101,43 @@ header {
   color: rgb(169, 169, 169);
   text-align: left;
   margin: 0;
+}
+
+.content textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgb(124, 122, 129);
+  background-color: transparent;
+  border: 1.5px solid rgb(83, 73, 104); 
+  border-radius: 8px;
+  padding: 6px 8px; 
+  resize: vertical; /* keep resize but vertical only */
+  outline: none; 
+  margin-bottom: 1rem;
+  font-family: inherit; 
+  box-sizing: border-box;
+}
+
+.content button {
+  font-size: 1rem;
+  color: rgb(124, 122, 129);
+  background-color: transparent;
+  border: 1.5px solid rgb(83, 73, 104); 
+  border-radius: 8px;
+  padding: 6px 8px; 
+  outline: none; 
+  margin-bottom: 1rem;
+  font-family: inherit; 
+  transition: background-color 0.3s ease;
+  transition: color 0.7s ease;
+}
+
+.content button:hover {
+  background-color: rgb(124, 122, 129);
+  color: rgb(51, 44, 66);
+  border: 1.5px solid rgb(124, 122, 129); 
 }
 
 .content a {
@@ -202,17 +242,17 @@ header {
   }
   
   /* Make links more obvious on mobile */
-  .hover-link {
+  /* .hover-link {
     color: rgb(120, 170, 255);
     text-decoration: underline;
     padding: 4px 8px;
     border-radius: 4px;
     background-color: rgba(100, 150, 255, 0.1);
-  }
+  } */
   
   /* Adjust ASCII art size for mobile */
   .ascii-art {
-    font-size: 8px;
+    font-size: 10px;
     overflow-x: auto;
   }
   
@@ -250,3 +290,28 @@ header {
   }
 }
 
+/* external fonts! */
+
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.space-mono-bold-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}

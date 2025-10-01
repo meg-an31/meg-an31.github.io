@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>meg\writing\panopticon</title>
+<title>meg\blackout poetry</title>
+<script src="blackout-script.js" defer></script>
 <link rel="stylesheet" href="..\style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,43 +42,44 @@
   </pre>
 </header>
 <div class="main-layout">
-  
-  <div class="side-rectangle left-side">
-    <pre class="side-ascii" style="font-family: monospace;">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-    </pre>
-  </div>
-  
-  <div class="content">
-    <h1>why i loved living in a panopticon</h1>
     
-    <p>still writing this one</p>
-    <br>
-    <p style="text-align: right;">17.08.25</p>
-    <br><br><br>
-  </div>
-  
-  
-  <div class="side-rectangle right-side">
+    <div class="side-rectangle left-side">
     <pre class="side-ascii" style="font-family: monospace;">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      
-   *   '*
-           *
+
+    </pre>
+    </div>
+    
+    <div class="content">
+    <h1>blackout poetry generator</h1>
+    <textarea type="text" id="input_text" name="input_text" cols="40" rows="4" placeholder="input your text here..."></textarea>
+
+    <button id="enter_text_btn">enter text</button>
+    <br><br>
+    <p id="result" white-space="pre-wrap">[your text will appear here]</p>
+    <br>
+    <button id="blackout_text_btn">[b] toggle blackout on current selection</button>
+    <button id="clear_blackout_btn">clear all blackouts</button>
+    </div>
+
+    
+    
+    <div class="side-rectangle right-side">
+    <pre class="side-ascii" style="font-family: monospace;">
+        <br>
+        
+    *   '*
+            *
                 *
-                       *
-               *
-                     *
+                        *
+                *
+                        *
 
 
 
     </pre>
-  </div>
+    </div>
 </div>
 
-<script src="../script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
