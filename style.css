@@ -20,6 +20,10 @@ header {
   white-space: pre;
 }
 
+.desktop-only {
+  display: none;
+}
+
 /* Main layout with three columns */
 .main-layout {
   display: flex;
@@ -196,8 +200,18 @@ header {
   border-color: rgb(83, 73, 104);
 }
 
+/* Shown on desktop */
+  @media (min-width: 1100px) {
+    .desktop-only {
+      display: block;
+    }
+    .mobile-only {
+      display: none;
+    }
+  }
+
 /* Mobile-friendly styles */
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .main-layout {
     flex-direction: column;
     align-items: center;
@@ -207,6 +221,10 @@ header {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .mobile-only {
+      display: block;
+    }
   
   /* Create a container for the side rectangles when stacked */
   .side-rectangle {
@@ -240,7 +258,7 @@ header {
   .hover-link::after {
     display: none;
   }
-  
+
   /* Make links more obvious on mobile */
   /* .hover-link {
     color: rgb(120, 170, 255);
